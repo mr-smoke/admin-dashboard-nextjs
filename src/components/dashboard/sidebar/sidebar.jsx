@@ -1,3 +1,4 @@
+import MenuItem from "./menuItem/menuItem";
 import styles from "./sidebar.module.css";
 import { menuItems } from "@/app/lib/data";
 
@@ -17,11 +18,7 @@ const Sidebar = () => {
             <h3>{item.title}</h3>
             <ul>
               {item.list.map((listItem, index) => (
-                <li key={index}>
-                  <a href={listItem.url}>
-                    {listItem.icon} {listItem.title}
-                  </a>
-                </li>
+                <MenuItem key={index} listItem={listItem} />
               ))}
             </ul>
           </li>
