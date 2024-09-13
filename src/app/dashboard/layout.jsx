@@ -1,3 +1,4 @@
+import Footer from "@/components/dashboard/footer/footer";
 import styles from "@/components/dashboard/layout.module.css";
 import Navbar from "@/components/dashboard/navbar/navbar";
 import Sidebar from "@/components/dashboard/sidebar/sidebar";
@@ -13,7 +14,9 @@ const Layout = ({ children }) => {
           <Navbar />
         </navbar>
         {children}
-        <footer className={styles.footer}>Footer</footer>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </main>
     </div>
   );
