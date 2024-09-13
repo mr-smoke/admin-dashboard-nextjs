@@ -1,8 +1,16 @@
+import Card from "@/components/dashboard/card/card";
+import styles from "@/components/dashboard/dashboard.module.css";
+
 const DashboardPage = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to the dashboard</p>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.cards}>
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
     </div>
   );
 };

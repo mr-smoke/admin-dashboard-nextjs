@@ -8,7 +8,7 @@ const Navbar = () => {
       <p>Users</p>
       <div className={styles.menu}>
         <div className={styles.search}>
-          <MdOutlineSearch size={33} className={styles.searchIcon} />
+          <MdOutlineSearch size={36} className={styles.searchIcon} />
           <input type="text" placeholder="Search" />
         </div>
         <a href="#">
