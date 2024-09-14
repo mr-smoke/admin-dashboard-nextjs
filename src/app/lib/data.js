@@ -149,3 +149,22 @@ export const products = [
     price: "200",
   },
 ];
+
+export const users = [
+  {
+    name: "Test User 1",
+    img: "/noavatar.png",
+    email: "testuser1@gmail.com",
+    role: "Admin",
+    status: "Active",
+    date: "12.12.2024",
+  },
+  {
+    name: "Test User 2",
+    img: "/noavatar.png",
+    email: "testuser2@gmail.com",
+    role: "User",
+    status: "Active",
+    date: "12.12.2024",
+  },
+];

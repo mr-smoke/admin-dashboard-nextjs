@@ -1,16 +1,14 @@
 import { MdMessage, MdNotifications, MdOutlineSearch } from "react-icons/md";
 import { IoMdGlobe } from "react-icons/io";
 import styles from "./navbar.module.css";
+import SearchBar from "../searchBar/searchBar";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <p>Users</p>
       <div className={styles.menu}>
-        <div className={styles.search}>
-          <MdOutlineSearch size={36} className={styles.searchIcon} />
-          <input type="text" placeholder="Search" />
-        </div>
+        <SearchBar />
         <a href="#">
           <MdMessage size={20} />
         </a>

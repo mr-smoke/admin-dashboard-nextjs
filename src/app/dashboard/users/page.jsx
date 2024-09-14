@@ -1,37 +1,36 @@
-import styles from "./products.module.css";
-import { products } from "../../lib/data";
+import styles from "./users.module.css";
+import { users } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 
-const ProductsPage = () => {
+const UsersPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
         <SearchBar />
-        <button className={styles.button}>Add Product</button>
       </div>
       <div className={styles.table}>
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Price</th>
+              <th>Name</th>
+              <th>Email</th>
               <th>Created Date</th>
-              <th>Stock</th>
+              <th>Role</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => (
+            {users.map((user, index) => (
               <tr key={index}>
-                <td className={styles.product}>
-                  <img src={product.img} alt={product.title} />
-                  {product.title}
+                <td className={styles.user}>
+                  <img src={user.img} alt={user.name} />
+                  {user.name}
                 </td>
-                <td>{product.desc}</td>
-                <td>${product.price}</td>
-                <td>{product.date}</td>
-                <td>{product.stock}</td>
+                <td>{user.email}</td>
+                <td>{user.date}</td>
+                <td>{user.role}</td>
+                <td>{user.status}</td>
                 <td>
                   <button className={`${styles.button} ${styles.view}`}>
                     View
@@ -53,4 +52,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default UsersPage;
