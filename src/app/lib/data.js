@@ -88,6 +88,7 @@ export const transactions = [
 
 export const items = [
   {
+    img: "/astronaut.png",
     time: "🔥 Avaible Now",
     title: "How to use the new version of the admin panel",
     info: "Takes 4 minutes to learn",
@@ -96,6 +97,7 @@ export const items = [
     buttonIcon: <MdOutlinePlayCircle size={20} />,
   },
   {
+    img: "/astronaut.png",
     time: "🚀 Coming Soon",
     title: "New features are coming soon",
     info: "Boost your productivity",
