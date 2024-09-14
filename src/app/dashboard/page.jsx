@@ -1,5 +1,5 @@
+import styles from "./dashboard.module.css";
 import Card from "@/components/dashboard/card/card";
-import styles from "@/components/dashboard/dashboard.module.css";
 import Rightbar from "@/components/dashboard/rightbar/rigthbar";
 import Transactions from "@/components/dashboard/transactions/transactions";
 

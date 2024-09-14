@@ -1,5 +1,5 @@
+import styles from "./layout.module.css";
 import Footer from "@/components/dashboard/footer/footer";
-import styles from "@/components/dashboard/layout.module.css";
 import Navbar from "@/components/dashboard/navbar/navbar";
 import Sidebar from "@/components/dashboard/sidebar/sidebar";
 
