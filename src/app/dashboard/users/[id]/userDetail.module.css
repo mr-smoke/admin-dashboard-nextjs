@@ -46,6 +46,10 @@
     align-self: center;
 }
 
+.form button:hover {
+    background-color: #45a049;
+}
+
 .formGroup {
     display: flex;
     flex-direction: column;
