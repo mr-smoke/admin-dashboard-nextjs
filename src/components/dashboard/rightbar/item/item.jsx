@@ -1,5 +1,4 @@
 import styles from "./item.module.css";
-import { MdOutlinePlayCircle } from "react-icons/md";
 
 const Item = ({ item }) => {
   return (

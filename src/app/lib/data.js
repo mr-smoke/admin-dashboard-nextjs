@@ -106,3 +106,46 @@ export const items = [
     buttonIcon: <MdAddBox size={20} />,
   },
 ];
+
+export const products = [
+  {
+    title: "Product 1",
+    img: "/noavatar.png",
+    desc: "Description of product 1",
+    date: "12.12.2024",
+    stock: "20",
+    price: "200",
+  },
+  {
+    title: "Product 2",
+    img: "/noavatar.png",
+    desc: "Description of product 2",
+    date: "12.12.2024",
+    stock: "10",
+    price: "200",
+  },
+  {
+    title: "Product 3",
+    img: "/noavatar.png",
+    desc: "Description of product 3",
+    date: "12.12.2024",
+    stock: "30",
+    price: "200",
+  },
+  {
+    title: "Product 4",
+    img: "/noavatar.png",
+    desc: "Description of product 4",
+    date: "12.12.2024",
+    stock: "40",
+    price: "200",
+  },
+  {
+    title: "Product 5",
+    img: "/noavatar.png",
+    desc: "Description of product 5",
+    date: "12.12.2024",
+    stock: "50",
+    price: "200",
+  },
+];

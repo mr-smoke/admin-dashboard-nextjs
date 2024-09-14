@@ -1,3 +1,8 @@
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .table th {
   font-weight: 600;
   text-align: left;

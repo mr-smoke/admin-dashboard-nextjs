@@ -1,5 +1,3 @@
-import { MdOutlinePlayCircle } from "react-icons/md";
-import styles from "./rightbar.module.css";
 import { items } from "@/app/lib/data";
 import Item from "./item/item";
 

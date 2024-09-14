@@ -4,7 +4,7 @@ import { transactions } from "@/app/lib/data";
 const Transactions = () => {
   return (
     <>
-      <h2>Deneme</h2>
+      <h2 className={styles.title}>Latest Transactions</h2>
       <table className={styles.table}>
         <thead>
           <tr>
