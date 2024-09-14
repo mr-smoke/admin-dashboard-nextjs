@@ -1,8 +1,12 @@
-import styles from "./addProducts.module.css";
+import styles from "./productDetail.module.css";
 
-const AddProducts = () => {
+const ProductDetailPage = () => {
   return (
     <div className={styles.wrapper}>
+      <div className={styles.userInfo}>
+        <img src="https://via.placeholder.com/150" alt="user" />
+        <p>Test User1</p>
+      </div>
       <form className={styles.form} action="">
         <div className={styles.formGroup}>
           <label htmlFor="title">Title</label>
@@ -47,4 +51,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default ProductDetailPage;
