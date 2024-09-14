@@ -10,7 +10,9 @@ const DashboardPage = () => {
           <Card />
           <Card />
         </div>
+        <div className={styles.transactions}>dee</div>
       </div>
+      <div className={styles.sideContent}>dee</div>
     </div>
   );
 };
