@@ -1,18 +1,21 @@
 import Card from "@/components/dashboard/card/card";
 import styles from "@/components/dashboard/dashboard.module.css";
+import Transactions from "@/components/dashboard/transactions/transactions";
 
 const DashboardPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.cards}>
+        <section className={styles.cards}>
           <Card />
           <Card />
           <Card />
-        </div>
-        <div className={styles.transactions}>dee</div>
+        </section>
+        <section className={styles.transactions}>
+          <Transactions />
+        </section>
       </div>
-      <div className={styles.sideContent}>dee</div>
+      <section className={styles.sideContent}>dee</section>
     </div>
   );
 };

@@ -50,3 +50,36 @@ export const menuItems = [
     ],
   },
 ];
+
+export const transactions = [
+  {
+    user: { name: "TestUser", img: "/noavatar.png" },
+    status: "pending",
+    date: "02.12.2024",
+    amount: "3200",
+  },
+  {
+    user: { name: "TestUser", img: "/noavatar.png" },
+    status: "completed",
+    date: "29.12.2024",
+    amount: "6200",
+  },
+  {
+    user: { name: "TestUser", img: "/noavatar.png" },
+    status: "failed",
+    date: "12.02.2024",
+    amount: "9200",
+  },
+  {
+    user: { name: "TestUser", img: "/noavatar.png" },
+    status: "pending",
+    date: "12.12.2024",
+    amount: "1500",
+  },
+  {
+    user: { name: "TestUser", img: "/noavatar.png" },
+    status: "completed",
+    date: "01.01.2024",
+    amount: "3000",
+  },
+];
