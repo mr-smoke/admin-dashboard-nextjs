@@ -1,5 +1,6 @@
 import Card from "@/components/dashboard/card/card";
 import styles from "@/components/dashboard/dashboard.module.css";
+import Rightbar from "@/components/dashboard/rightbar/rigthbar";
 import Transactions from "@/components/dashboard/transactions/transactions";
 
 const DashboardPage = () => {
@@ -15,7 +16,9 @@ const DashboardPage = () => {
           <Transactions />
         </section>
       </div>
-      <section className={styles.sideContent}>dee</section>
+      <section className={styles.rightbar}>
+        <Rightbar />
+      </section>
     </div>
   );
 };

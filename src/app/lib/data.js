@@ -9,6 +9,8 @@ import {
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
+  MdOutlinePlayCircle,
+  MdAddBox,
 } from "react-icons/md";
 
 export const menuItems = [
@@ -81,5 +83,24 @@ export const transactions = [
     status: "completed",
     date: "01.01.2024",
     amount: "3000",
+  },
+];
+
+export const items = [
+  {
+    time: "🔥 Avaible Now",
+    title: "How to use the new version of the admin panel",
+    info: "Takes 4 minutes to learn",
+    desc: "This is a guide for the new version of the admin panel. Learn how to use the new features of the admin panel. Quick and easy guide. For more information, click the button below.",
+    button: "Watch",
+    buttonIcon: <MdOutlinePlayCircle size={20} />,
+  },
+  {
+    time: "🚀 Coming Soon",
+    title: "New features are coming soon",
+    info: "Boost your productivity",
+    desc: "We are working on new features to increase your productivity. Stay tuned for the new features. For more information, click the button below.",
+    button: "Add",
+    buttonIcon: <MdAddBox size={20} />,
   },
 ];
