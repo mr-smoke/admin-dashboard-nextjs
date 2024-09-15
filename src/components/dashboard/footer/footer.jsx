@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./footer.module.css";
 import { FaGithub } from "react-icons/fa";
 
@@ -6,10 +7,14 @@ const Footer = () => {
     <div className={styles.footerInfo}>
       <p>
         Maded by
-        <a href="" target="_blank" rel="noreferrer">
+        <Link
+          href="https://github.com/mr-smoke"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaGithub />
           Baki Duman
-        </a>
+        </Link>
       </p>
       <span>© All rights reserved.</span>
     </div>

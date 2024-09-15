@@ -92,31 +92,41 @@ export const cards = [
 
 export const transactions = [
   {
-    user: { name: "TestUser", img: "/noavatar.png" },
+    id: 1,
+    name: "TestUser",
+    img: "/noavatar.png",
     status: "pending",
     date: "02.12.2024",
     amount: "3200",
   },
   {
-    user: { name: "TestUser", img: "/noavatar.png" },
+    id: 2,
+    name: "TestUser",
+    img: "/noavatar.png",
     status: "completed",
     date: "29.12.2024",
     amount: "6200",
   },
   {
-    user: { name: "TestUser", img: "/noavatar.png" },
+    id: 3,
+    name: "TestUser",
+    img: "/noavatar.png",
     status: "failed",
     date: "12.02.2024",
     amount: "9200",
   },
   {
-    user: { name: "TestUser", img: "/noavatar.png" },
+    id: 4,
+    name: "TestUser",
+    img: "/noavatar.png",
     status: "pending",
     date: "12.12.2024",
     amount: "1500",
   },
   {
-    user: { name: "TestUser", img: "/noavatar.png" },
+    id: 5,
+    name: "TestUser",
+    img: "/noavatar.png",
     status: "completed",
     date: "01.01.2024",
     amount: "3000",
@@ -184,6 +194,7 @@ export const items = [
 
 export const products = [
   {
+    id: 1,
     title: "Product 1",
     img: "/noavatar.png",
     desc: "Description of product 1",
@@ -192,6 +203,7 @@ export const products = [
     price: "200",
   },
   {
+    id: 2,
     title: "Product 2",
     img: "/noavatar.png",
     desc: "Description of product 2",
@@ -200,6 +212,7 @@ export const products = [
     price: "200",
   },
   {
+    id: 3,
     title: "Product 3",
     img: "/noavatar.png",
     desc: "Description of product 3",
@@ -208,6 +221,7 @@ export const products = [
     price: "200",
   },
   {
+    id: 4,
     title: "Product 4",
     img: "/noavatar.png",
     desc: "Description of product 4",
@@ -216,6 +230,7 @@ export const products = [
     price: "200",
   },
   {
+    id: 5,
     title: "Product 5",
     img: "/noavatar.png",
     desc: "Description of product 5",
@@ -227,6 +242,7 @@ export const products = [
 
 export const users = [
   {
+    id: 1,
     name: "Test User 1",
     img: "/noavatar.png",
     email: "testuser1@gmail.com",
@@ -235,6 +251,7 @@ export const users = [
     date: "12.12.2024",
   },
   {
+    id: 2,
     name: "Test User 2",
     img: "/noavatar.png",
     email: "testuser2@gmail.com",

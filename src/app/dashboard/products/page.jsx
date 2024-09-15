@@ -2,13 +2,16 @@ import styles from "./products.module.css";
 import { products } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductsPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
         <SearchBar placeholder="Search for a product..." />
-        <button>Add Product</button>
+        <Link href="/dashboard/products/add">
+          <button>Add Product</button>
+        </Link>
       </div>
       <div className={styles.table}>
         <table className={styles.table}>
@@ -39,7 +42,9 @@ const ProductsPage = () => {
                 <td>{product.date}</td>
                 <td>{product.stock}</td>
                 <td>
-                  <button className={styles.view}>View</button>
+                  <Link href={`/dashboard/products/${product.id}`}>
+                    <button className={styles.view}>View</button>
+                  </Link>
                   <button className={styles.delete}>Delete</button>
                 </td>
               </tr>

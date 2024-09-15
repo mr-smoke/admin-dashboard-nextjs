@@ -19,13 +19,8 @@ const Transactions = () => {
           {transactions.map((item, index) => (
             <tr key={index}>
               <td className={styles.user}>
-                <Image
-                  src={item.user.img}
-                  alt={item.user.name}
-                  width={50}
-                  height={50}
-                />
-                {item.user.name}
+                <Image src={item.img} alt={item.name} width={50} height={50} />
+                {item.name}
               </td>
               <td>
                 <span

@@ -2,12 +2,16 @@ import styles from "./users.module.css";
 import { users } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
+import Link from "next/link";
 
 const UsersPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
         <SearchBar placeholder="Search for a user..." />
+        <Link href="/dashboard/users/add">
+          <button>Add User</button>
+        </Link>
       </div>
       <div className={styles.table}>
         <table className={styles.table}>
@@ -38,7 +42,9 @@ const UsersPage = () => {
                 <td>{user.role}</td>
                 <td>{user.status}</td>
                 <td>
-                  <button className={styles.view}>View</button>
+                  <Link href={`/dashboard/users/${user.id}`}>
+                    <button className={styles.view}>View</button>
+                  </Link>
                   <button className={styles.delete}>Delete</button>
                 </td>
               </tr>
