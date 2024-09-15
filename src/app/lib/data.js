@@ -172,7 +172,7 @@ export const items = [
     buttonIcon: <MdOutlinePlayCircle size={20} />,
   },
   {
-    img: "/astronaut.png",
+    img: "/astronaut2.png",
     time: "🚀 Coming Soon",
     title: "New features are coming soon",
     info: "Boost your productivity",

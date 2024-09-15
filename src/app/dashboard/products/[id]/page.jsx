@@ -1,10 +1,11 @@
+import Image from "next/image";
 import styles from "./productDetail.module.css";
 
 const ProductDetailPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.userInfo}>
-        <img src="https://via.placeholder.com/150" alt="user" />
+        <Image width={300} height={300} src="/noavatar.png" alt="user" />
         <p>Test User1</p>
       </div>
       <form className={styles.form} action="">

@@ -40,7 +40,7 @@ const AddProducts = () => {
           ></textarea>
         </div>
         <button type="submit" className={styles.button}>
-          Update
+          Add Product
         </button>
       </form>
     </div>

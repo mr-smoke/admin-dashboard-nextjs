@@ -13,10 +13,6 @@
     gap: 1rem;
 }
 
-.userInfo img {
-    width: 300px;
-}
-
 .form {
     width: 50%;
     display: flex;

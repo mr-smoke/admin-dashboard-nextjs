@@ -1,13 +1,14 @@
 import styles from "./products.module.css";
 import { products } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
+import Image from "next/image";
 
 const ProductsPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
-        <SearchBar />
-        <button className={styles.button}>Add Product</button>
+        <SearchBar placeholder="Search for a product..." />
+        <button>Add Product</button>
       </div>
       <div className={styles.table}>
         <table className={styles.table}>
@@ -25,7 +26,12 @@ const ProductsPage = () => {
             {products.map((product, index) => (
               <tr key={index}>
                 <td className={styles.product}>
-                  <img src={product.img} alt={product.title} />
+                  <Image
+                    width={50}
+                    height={50}
+                    src={product.img}
+                    alt={product.title}
+                  />
                   {product.title}
                 </td>
                 <td>{product.desc}</td>
@@ -33,12 +39,8 @@ const ProductsPage = () => {
                 <td>{product.date}</td>
                 <td>{product.stock}</td>
                 <td>
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
-                  </button>
-                  <button className={`${styles.button} ${styles.delete}`}>
-                    Delete
-                  </button>
+                  <button className={styles.view}>View</button>
+                  <button className={styles.delete}>Delete</button>
                 </td>
               </tr>
             ))}
@@ -46,8 +48,8 @@ const ProductsPage = () => {
         </table>
       </div>
       <div className={styles.footer}>
-        <button className={styles.button}>Previous</button>
-        <button className={styles.button}>Next</button>
+        <button>Previous</button>
+        <button>Next</button>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <p>{path.split("/").pop()}</p>
       <div className={styles.menu}>
-        <SearchBar />
+        <SearchBar placeholder="Search..." />
         <a href="#">
           <MdMessage size={20} />
         </a>
