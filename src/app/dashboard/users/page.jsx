@@ -1,10 +1,13 @@
 import styles from "./users.module.css";
-import { users } from "../../lib/data";
+import { fetchUsers, usersData } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
 import Link from "next/link";
 
-const UsersPage = () => {
+const UsersPage = async () => {
+  const users = await fetchUsers();
+
+  console.log(users);
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -26,7 +29,7 @@ const UsersPage = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {usersData.map((user, index) => (
               <tr key={index}>
                 <td className={styles.user}>
                   <Image
