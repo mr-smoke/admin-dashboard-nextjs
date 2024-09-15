@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./transactions.module.css";
 import { transactions } from "@/app/lib/data";
 
@@ -18,7 +19,12 @@ const Transactions = () => {
           {transactions.map((item, index) => (
             <tr key={index}>
               <td className={styles.user}>
-                <img src={item.user.img} alt={item.user.name} />
+                <Image
+                  src={item.user.img}
+                  alt={item.user.name}
+                  width={50}
+                  height={50}
+                />
                 {item.user.name}
               </td>
               <td>

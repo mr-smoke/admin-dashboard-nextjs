@@ -33,3 +33,10 @@
     border-radius: 5px;
     padding: 1.5rem;
 }
+
+.chart {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 1.5rem;
+    height: 80vh;
+}

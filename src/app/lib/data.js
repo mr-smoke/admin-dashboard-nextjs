@@ -123,6 +123,44 @@ export const transactions = [
   },
 ];
 
+export const chart = [
+  {
+    name: "Sun",
+    visits: 4000,
+    clicks: 2400,
+  },
+  {
+    name: "Mon",
+    visits: 3000,
+    clicks: 1398,
+  },
+  {
+    name: "Tue",
+    visits: 2000,
+    clicks: 3800,
+  },
+  {
+    name: "Wed",
+    visits: 2780,
+    clicks: 3908,
+  },
+  {
+    name: "Thu",
+    visits: 1890,
+    clicks: 4800,
+  },
+  {
+    name: "Fri",
+    visits: 2390,
+    clicks: 3800,
+  },
+  {
+    name: "Sat",
+    visits: 3490,
+    clicks: 4300,
+  },
+];
+
 export const items = [
   {
     img: "/astronaut.png",

@@ -2,6 +2,7 @@ import styles from "./dashboard.module.css";
 import Card from "@/components/dashboard/card/card";
 import Rightbar from "@/components/dashboard/rightbar/rigthbar";
 import Transactions from "@/components/dashboard/transactions/transactions";
+import Chart from "@/components/dashboard/chart/chart";
 import { cards } from "../lib/data";
 
 const DashboardPage = () => {
@@ -15,6 +16,9 @@ const DashboardPage = () => {
         </section>
         <section className={styles.transactions}>
           <Transactions />
+        </section>
+        <section className={styles.chart}>
+          <Chart />
         </section>
       </div>
       <section className={styles.rightbar}>
