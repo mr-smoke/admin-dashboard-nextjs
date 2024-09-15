@@ -17,10 +17,22 @@ export const menuItems = [
   {
     title: "Pages",
     list: [
-      { title: "Dashboard", url: "/", icon: <MdDashboard /> },
-      { title: "Users", url: "/users", icon: <MdSupervisedUserCircle /> },
-      { title: "Products", url: "/products", icon: <MdShoppingBag /> },
-      { title: "Transactions", url: "/transactions", icon: <MdAttachMoney /> },
+      { title: "Dashboard", url: "/dashboard", icon: <MdDashboard /> },
+      {
+        title: "Users",
+        url: "/dashboard/users",
+        icon: <MdSupervisedUserCircle />,
+      },
+      {
+        title: "Products",
+        url: "/dashboard/products",
+        icon: <MdShoppingBag />,
+      },
+      {
+        title: "Transactions",
+        url: "/dashboard/transactions",
+        icon: <MdAttachMoney />,
+      },
     ],
   },
   {
@@ -28,17 +40,17 @@ export const menuItems = [
     list: [
       {
         title: "Revenue",
-        url: "/revenue",
+        url: "/dashboard/revenue",
         icon: <MdWork />,
       },
       {
         title: "Reports",
-        url: "/reports",
+        url: "/dashboard/reports",
         icon: <MdAnalytics />,
       },
       {
         title: "Teams",
-        url: "/teams",
+        url: "/dashboard/teams",
         icon: <MdPeople />,
       },
     ],
@@ -46,10 +58,35 @@ export const menuItems = [
   {
     title: "User",
     list: [
-      { title: "Settings", url: "/settings", icon: <MdOutlineSettings /> },
-      { title: "Help", url: "/help", icon: <MdHelpCenter /> },
+      {
+        title: "Settings",
+        url: "/dashboard/settings",
+        icon: <MdOutlineSettings />,
+      },
+      { title: "Help", url: "/dashboard/help", icon: <MdHelpCenter /> },
       { title: "Logout", url: "/logut", icon: <MdLogout /> },
     ],
+  },
+];
+
+export const cards = [
+  {
+    icon: <MdSupervisedUserCircle size={30} />,
+    title: "Total Users",
+    amount: "20.270",
+    percentage: 2.5,
+  },
+  {
+    icon: <MdShoppingBag size={30} />,
+    title: "Total Products",
+    amount: "1.270",
+    percentage: 3.7,
+  },
+  {
+    icon: <MdAttachMoney size={30} />,
+    title: "Total Transactions",
+    amount: "270",
+    percentage: -1.2,
   },
 ];
 

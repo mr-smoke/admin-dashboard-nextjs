@@ -1,12 +1,15 @@
-import { MdMessage, MdNotifications, MdOutlineSearch } from "react-icons/md";
+"use client";
+import { MdMessage, MdNotifications } from "react-icons/md";
 import { IoMdGlobe } from "react-icons/io";
 import styles from "./navbar.module.css";
 import SearchBar from "../searchBar/searchBar";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const path = usePathname();
   return (
     <nav className={styles.navbar}>
-      <p>Users</p>
+      <p>{path.split("/").pop()}</p>
       <div className={styles.menu}>
         <SearchBar />
         <a href="#">

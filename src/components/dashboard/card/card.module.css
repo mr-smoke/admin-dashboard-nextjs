@@ -8,6 +8,11 @@
     flex: 1;
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s;
+}
+
 .cardContent {
     display: flex;
     flex-direction: column;
@@ -25,6 +30,10 @@
     font-size: 0.8rem;
 }
 
-.cardContent .cardInfo span {
+.cardContent .cardInfo .positive {
     color: #00ff37;
+}
+
+.cardContent .cardInfo .negative {
+    color: #ff0000;
 }
