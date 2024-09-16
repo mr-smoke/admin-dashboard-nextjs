@@ -263,10 +263,12 @@ export const usersData = [
   },
 ];
 
-export const fetchUsers = async () => {
+export const fetchUsers = async (q) => {
+  const regex = new RegExp(q, "i");
+
   try {
     await connectToDatabase();
-    const users = await UserModel.find();
+    const users = await UserModel.find({ username: { $regex: regex } });
     return users;
   } catch (error) {
     throw new Error(error);

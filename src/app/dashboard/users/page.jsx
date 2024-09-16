@@ -1,13 +1,14 @@
 import styles from "./users.module.css";
-import { fetchUsers, usersData } from "../../lib/data";
+import { fetchUsers } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
 import Link from "next/link";
 
-const UsersPage = async () => {
-  const users = await fetchUsers();
+const UsersPage = async ({ searchParams }) => {
+  const q = searchParams?.search || "";
 
-  console.log(users);
+  const users = await fetchUsers(q);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -29,21 +30,21 @@ const UsersPage = async () => {
             </tr>
           </thead>
           <tbody>
-            {usersData.map((user, index) => (
+            {users.map((user, index) => (
               <tr key={index}>
                 <td className={styles.user}>
                   <Image
                     width={40}
                     height={40}
                     src={user.img}
-                    alt={user.name}
+                    alt={user.username}
                   />
-                  {user.name}
+                  {user.username}
                 </td>
                 <td>{user.email}</td>
-                <td>{user.date}</td>
-                <td>{user.role}</td>
-                <td>{user.status}</td>
+                <td>{user.createdAt?.toString().slice(4, 16)}</td>
+                <td>{user.isAdmin ? "admin" : "user"}</td>
+                <td>{user.isActive ? "active" : "passive"}</td>
                 <td>
                   <Link href={`/dashboard/users/${user.id}`}>
                     <button className={styles.view}>View</button>
