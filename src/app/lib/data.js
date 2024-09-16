@@ -263,13 +263,21 @@ export const usersData = [
   },
 ];
 
-export const fetchUsers = async (q) => {
-  const regex = new RegExp(q, "i");
+export const fetchUsers = async (query, page) => {
+  const regex = new RegExp(query, "i");
 
   try {
     await connectToDatabase();
-    const users = await UserModel.find({ username: { $regex: regex } });
-    return users;
+    const count = await UserModel.countDocuments({
+      username: { $regex: regex },
+    });
+    if (page < 1 || isNaN(page) || page * 2 - 1 > count) {
+      page = 1;
+    }
+    const users = await UserModel.find({ username: { $regex: regex } })
+      .limit(2)
+      .skip((page - 1) * 2);
+    return { users, count };
   } catch (error) {
     throw new Error(error);
   }

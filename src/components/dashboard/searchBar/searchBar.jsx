@@ -10,17 +10,20 @@ const SearchBar = ({ placeholder }) => {
   const { replace } = useRouter();
 
   const handleSearch = useDebouncedCallback((e) => {
-    searchParams.set("search", e.target.value);
-    const search = searchParams.toString();
-    const url = search ? `${pathname}?${search}` : pathname;
-    history.pushState({}, "", url);
+    searchParams.set("query", e.target.value);
+    searchParams.set("page", 1);
     replace(`${pathname}?${searchParams}`);
   }, 300);
 
   return (
     <div className={styles.search}>
       <MdOutlineSearch size={36} className={styles.searchIcon} />
-      <input type="text" placeholder={placeholder} onChange={handleSearch} />
+      <input
+        type="text"
+        placeholder={placeholder}
+        defaultValue={searchParams?.get("query") || ""}
+        onChange={handleSearch}
+      />
     </div>
   );
 };

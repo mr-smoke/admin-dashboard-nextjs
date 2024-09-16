@@ -3,11 +3,13 @@ import { fetchUsers } from "../../lib/data";
 import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
 import Link from "next/link";
+import Pagination from "@/components/dashboard/pagination/pagination";
 
 const UsersPage = async ({ searchParams }) => {
-  const q = searchParams?.search || "";
+  const query = searchParams?.query || "";
+  const page = searchParams?.page || 1;
 
-  const users = await fetchUsers(q);
+  const { users, count } = await fetchUsers(query, page);
 
   return (
     <div className={styles.wrapper}>
@@ -57,8 +59,7 @@ const UsersPage = async ({ searchParams }) => {
         </table>
       </div>
       <div className={styles.footer}>
-        <button>Previous</button>
-        <button>Next</button>
+        <Pagination count={count} />
       </div>
     </div>
   );
