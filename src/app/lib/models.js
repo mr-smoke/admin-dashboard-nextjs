@@ -72,6 +72,7 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Product =
-  mongoose.models.Product || mongoose.model("Product", productSchema);
+export const UserModel =
+  mongoose.models?.User ?? mongoose.model("User", userSchema);
+export const ProductModel =
+  mongoose.models?.Product ?? mongoose.model("Product", productSchema);

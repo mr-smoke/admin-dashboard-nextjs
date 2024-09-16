@@ -12,7 +12,7 @@ import {
   MdOutlinePlayCircle,
   MdAddBox,
 } from "react-icons/md";
-import { User } from "./models";
+import { UserModel } from "./models";
 import { connectToDatabase } from "./utils";
 
 export const menuItems = [
@@ -265,8 +265,8 @@ export const usersData = [
 
 export const fetchUsers = async () => {
   try {
-    connectToDatabase();
-    const users = await User.find();
+    await connectToDatabase();
+    const users = await UserModel.find();
     return users;
   } catch (error) {
     throw new Error(error);
