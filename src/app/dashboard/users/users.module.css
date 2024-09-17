@@ -25,6 +25,10 @@
 
 .table td {
     padding: 0.7rem 0;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .user {

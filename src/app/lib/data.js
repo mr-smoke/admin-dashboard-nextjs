@@ -282,7 +282,8 @@ export const fetchUsers = async (query, page) => {
     }
     const users = await UserModel.find({ username: { $regex: regex } })
       .limit(itemsPerPage)
-      .skip((page - 1) * itemsPerPage);
+      .skip((page - 1) * itemsPerPage)
+      .sort({ createdAt: -1 });
     return { users, count };
   } catch (error) {
     throw new Error(error);
@@ -306,7 +307,8 @@ export const fetchProducts = async (query, page) => {
     }
     const products = await ProductModel.find({ title: { $regex: regex } })
       .limit(itemsPerPage)
-      .skip((page - 1) * itemsPerPage);
+      .skip((page - 1) * itemsPerPage)
+      .sort({ createdAt: -1 });
     return { products, count };
   } catch (error) {
     throw new Error(error);
