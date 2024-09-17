@@ -81,3 +81,35 @@ export const addProduct = async (formData) => {
   revalidatePath("/dashboard/products");
   redirect("/dashboard/products");
 };
+
+export const updateProduct = async (formData) => {
+  const { id, title, price, stock, size, category, desc } =
+    Object.fromEntries(formData);
+
+  try {
+    connectToDatabase();
+    await ProductModel.findByIdAndUpdate(id, {
+      title,
+      price,
+      stock,
+      size,
+      category,
+      desc,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/dashboard/products");
+  redirect("/dashboard/products");
+};
+
+export const deleteProduct = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+  try {
+    connectToDatabase();
+    await ProductModel.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/dashboard/products");
+};

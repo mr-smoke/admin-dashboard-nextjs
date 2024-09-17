@@ -4,6 +4,7 @@ import SearchBar from "@/components/dashboard/searchBar/searchBar";
 import Image from "next/image";
 import Link from "next/link";
 import Pagination from "@/components/dashboard/pagination/pagination";
+import { deleteProduct } from "@/app/lib/actions";
 
 const ProductsPage = async ({ searchParams }) => {
   const query = searchParams?.query || "";
@@ -53,7 +54,10 @@ const ProductsPage = async ({ searchParams }) => {
                   <Link href={`/dashboard/products/${product.id}`}>
                     <button className={styles.view}>View</button>
                   </Link>
-                  <button className={styles.delete}>Delete</button>
+                  <form action={deleteProduct}>
+                    <input type="hidden" name="id" value={product.id} />
+                    <button className={styles.delete}>Delete</button>
+                  </form>
                 </td>
               </tr>
             ))}
