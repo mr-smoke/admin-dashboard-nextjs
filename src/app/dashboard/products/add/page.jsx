@@ -1,28 +1,29 @@
+import { addProduct } from "@/app/lib/actions";
 import styles from "./addProducts.module.css";
 
 const AddProducts = () => {
   return (
     <div className={styles.wrapper}>
-      <form className={styles.form} action="">
+      <form className={styles.form} action={addProduct}>
         <div className={styles.formGroup}>
           <label htmlFor="title">Title</label>
-          <input type="text" id="title" required />
+          <input type="text" id="title" name="title" required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="price">Price</label>
-          <input type="number" id="price" required />
+          <input type="number" id="price" name="price" required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="stock">Stock</label>
-          <input type="number" id="stock" required />
+          <input type="number" id="stock" name="stock" required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="size">Size</label>
-          <input type="text" id="size" required />
+          <input type="text" id="size" name="size" />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="category">Category</label>
-          <select id="category">
+          <select id="category" name="category">
             <option value="general">Select a category</option>
             <option value="electronics">Electronics</option>
             <option value="jewelery">Jewelery</option>
@@ -30,9 +31,9 @@ const AddProducts = () => {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="desc">Description</label>
           <textarea
-            id="description"
+            id="desc"
             name="desc"
             rows="4"
             placeholder="Enter a description"

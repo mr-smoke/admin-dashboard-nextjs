@@ -1,6 +1,6 @@
 "use server";
 import { revalidatePath } from "next/cache";
-import { UserModel } from "./models";
+import { ProductModel, UserModel } from "./models";
 import { connectToDatabase } from "./utils";
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
@@ -27,4 +27,57 @@ export const addUser = async (formData) => {
   }
   revalidatePath("/dashboard/users");
   redirect("/dashboard/users");
+};
+
+export const updateUser = async (formData) => {
+  const { id, username, email, isAdmin, isActive, address } =
+    Object.fromEntries(formData);
+
+  try {
+    connectToDatabase();
+    await UserModel.findByIdAndUpdate(id, {
+      username,
+      email,
+      isAdmin,
+      isActive,
+      address,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/dashboard/users");
+  redirect("/dashboard/users");
+};
+
+export const deleteUser = async (id) => {
+  try {
+    connectToDatabase();
+    await UserModel.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/dashboard/users");
+  redirect("/dashboard/users");
+};
+
+export const addProduct = async (formData) => {
+  const { title, price, stock, size, category, desc } =
+    Object.fromEntries(formData);
+
+  try {
+    connectToDatabase();
+    const newProduct = new ProductModel({
+      title,
+      price,
+      stock,
+      size,
+      category,
+      desc,
+    });
+    await newProduct.save();
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/dashboard/products");
+  redirect("/dashboard/products");
 };
