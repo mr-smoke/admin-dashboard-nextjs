@@ -47,6 +47,10 @@
 
 .table td {
     padding: 0.7rem 0;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .product {
@@ -76,6 +80,16 @@
 .delete {
     background: #b92924;
     color: #fff;
+}
+
+.tableInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .footer {

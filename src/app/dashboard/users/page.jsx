@@ -20,15 +20,15 @@ const UsersPage = async ({ searchParams }) => {
         </Link>
       </div>
       <div className={styles.table}>
-        <table className={styles.table}>
+        <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Created Date</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th style={{ width: "20%" }}>Name</th>
+              <th style={{ width: "25%" }}>Email</th>
+              <th style={{ width: "15%" }}>Created Date</th>
+              <th style={{ width: "15%" }}>Role</th>
+              <th style={{ width: "10%" }}>Status</th>
+              <th style={{ width: "10%" }}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +57,14 @@ const UsersPage = async ({ searchParams }) => {
             ))}
           </tbody>
         </table>
+        <div className={styles.tableInfo}>
+          <p className={styles.count}>{`${count} products founded.`}</p>
+          {count > 0 && (
+            <p className={styles.page}>{`Page ${page} of ${Math.ceil(
+              count / 5
+            )}`}</p>
+          )}
+        </div>
       </div>
       <div className={styles.footer}>
         <Pagination count={count} />

@@ -10,6 +10,7 @@ const ProductsPage = async ({ searchParams }) => {
   const page = searchParams?.page || 1;
 
   const { products, count } = await fetchProducts(query, page);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -19,15 +20,15 @@ const ProductsPage = async ({ searchParams }) => {
         </Link>
       </div>
       <div className={styles.table}>
-        <table className={styles.table}>
+        <table>
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Created Date</th>
-              <th>Stock</th>
-              <th>Action</th>
+              <th style={{ width: "20%" }}>Title</th>
+              <th style={{ width: "25%" }}>Description</th>
+              <th style={{ width: "15%" }}>Price</th>
+              <th style={{ width: "15%" }}>Created Date</th>
+              <th style={{ width: "10%" }}>Stock</th>
+              <th style={{ width: "10%" }}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +59,14 @@ const ProductsPage = async ({ searchParams }) => {
             ))}
           </tbody>
         </table>
+        <div className={styles.tableInfo}>
+          <p className={styles.count}>{`${count} products founded.`}</p>
+          {count > 0 && (
+            <p className={styles.page}>{`Page ${page} of ${Math.ceil(
+              count / 5
+            )}`}</p>
+          )}
+        </div>
       </div>
       <div className={styles.footer}>
         <Pagination count={count} />
