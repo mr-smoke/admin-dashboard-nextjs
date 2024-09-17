@@ -1,12 +1,15 @@
 import Image from "next/image";
 import styles from "./userDetail.module.css";
+import { fetchUser } from "@/app/lib/data";
 
-const UserDetailPage = () => {
+const UserDetailPage = async ({ params }) => {
+  const id = params.id;
+  const user = await fetchUser(id);
   return (
     <div className={styles.wrapper}>
       <div className={styles.userInfo}>
-        <Image width={300} height={300} src="/noavatar.png" alt="user" />
-        <p>Test User1</p>
+        <Image width={300} height={300} src={user.img} alt="user" />
+        <p>{user.username}</p>
       </div>
       <form className={styles.form} action="">
         <div className={styles.formGroup}>

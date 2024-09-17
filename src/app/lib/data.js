@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { ProductModel, UserModel } from "./models";
 import { connectToDatabase } from "./utils";
+import mongoose from "mongoose";
 
 const itemsPerPage = process.env.NEXT_PUBLIC_ITEMS_PER_PAGE;
 
@@ -310,6 +311,16 @@ export const fetchProducts = async (query, page) => {
       .skip((page - 1) * itemsPerPage)
       .sort({ createdAt: -1 });
     return { products, count };
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const fetchUser = async (id) => {
+  try {
+    await connectToDatabase();
+    const user = await UserModel.findById(id);
+    return user;
   } catch (error) {
     throw new Error(error);
   }
