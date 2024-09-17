@@ -32,10 +32,10 @@ const UserDetailPage = async ({ params }) => {
             placeholder={user.email}
           />
         </div>
-        {/* <div className={styles.formGroup}>
+        <div className={styles.formGroup}>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password"  />
-        </div> */}
+          <input type="password" id="password" name="password" />
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="phone">Phone</label>
           <input

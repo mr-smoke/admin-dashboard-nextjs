@@ -30,7 +30,7 @@ export const addUser = async (formData) => {
 };
 
 export const updateUser = async (formData) => {
-  const { id, username, email, phone, isAdmin, isActive, address } =
+  const { id, username, email, password, phone, isAdmin, isActive, address } =
     Object.fromEntries(formData);
 
   try {
@@ -38,6 +38,7 @@ export const updateUser = async (formData) => {
     const updateFields = {
       username,
       email,
+      password,
       phone,
       isAdmin,
       isActive,
@@ -97,14 +98,22 @@ export const updateProduct = async (formData) => {
 
   try {
     connectToDatabase();
-    await ProductModel.findByIdAndUpdate(id, {
+    const updateFields = {
       title,
       price,
       stock,
       size,
       category,
       desc,
+    };
+
+    Object.keys(updateFields).forEach((key) => {
+      if (updateFields[key] === "" || updateFields[key] === undefined) {
+        delete updateFields[key];
+      }
     });
+
+    await ProductModel.findByIdAndUpdate(id, updateFields);
   } catch (error) {
     throw new Error(error);
   }
