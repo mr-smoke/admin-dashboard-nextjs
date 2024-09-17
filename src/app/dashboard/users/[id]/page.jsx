@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./userDetail.module.css";
 import { fetchUser } from "@/app/lib/data";
+import { updateUser } from "@/app/lib/actions";
 
 const UserDetailPage = async ({ params }) => {
   const id = params.id;
@@ -11,26 +12,42 @@ const UserDetailPage = async ({ params }) => {
         <Image width={300} height={300} src={user.img} alt="user" />
         <p>{user.username}</p>
       </div>
-      <form className={styles.form} action="">
+      <form className={styles.form} action={updateUser}>
+        <input type="hidden" name="id" value={id} />
         <div className={styles.formGroup}>
           <label htmlFor="username">Username</label>
-          <input type="text" id="username" required />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder={user.username}
+          />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder={user.email}
+          />
         </div>
-        <div className={styles.formGroup}>
+        {/* <div className={styles.formGroup}>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" required />
-        </div>
+          <input type="password" id="password" name="password"  />
+        </div> */}
         <div className={styles.formGroup}>
           <label htmlFor="phone">Phone</label>
-          <input type="phone" id="phone" required />
+          <input
+            type="phone"
+            id="phone"
+            name="phone"
+            placeholder={user.phone}
+          />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="isAdmin">User Type</label>
-          <select id="isAdmin">
+          <select id="isAdmin" name="isAdmin">
             <option value={false}>Select user type</option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
@@ -38,7 +55,7 @@ const UserDetailPage = async ({ params }) => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="isActive">Status</label>
-          <select id="isActive">
+          <select id="isActive" name="isActive">
             <option value={true}>Select a status</option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
@@ -48,12 +65,13 @@ const UserDetailPage = async ({ params }) => {
           <label htmlFor="address">Address</label>
           <textarea
             id="address"
+            name="address"
             rows="4"
-            placeholder="Enter a address"
+            placeholder={user.address}
           ></textarea>
         </div>
         <button type="submit" className={styles.button}>
-          Add User
+          Update
         </button>
       </form>
     </div>

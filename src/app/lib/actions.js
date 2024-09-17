@@ -30,18 +30,27 @@ export const addUser = async (formData) => {
 };
 
 export const updateUser = async (formData) => {
-  const { id, username, email, isAdmin, isActive, address } =
+  const { id, username, email, phone, isAdmin, isActive, address } =
     Object.fromEntries(formData);
 
   try {
     connectToDatabase();
-    await UserModel.findByIdAndUpdate(id, {
+    const updateFields = {
       username,
       email,
+      phone,
       isAdmin,
       isActive,
       address,
+    };
+
+    Object.keys(updateFields).forEach((key) => {
+      if (updateFields[key] === "" || updateFields[key] === undefined) {
+        delete updateFields[key];
+      }
     });
+
+    await UserModel.findByIdAndUpdate(id, updateFields);
   } catch (error) {
     throw new Error(error);
   }
