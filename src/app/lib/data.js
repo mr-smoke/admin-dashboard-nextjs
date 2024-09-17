@@ -12,8 +12,10 @@ import {
   MdOutlinePlayCircle,
   MdAddBox,
 } from "react-icons/md";
-import { UserModel } from "./models";
+import { ProductModel, UserModel } from "./models";
 import { connectToDatabase } from "./utils";
+
+const itemsPerPage = process.env.NEXT_PUBLIC_ITEMS_PER_PAGE;
 
 export const menuItems = [
   {
@@ -271,13 +273,41 @@ export const fetchUsers = async (query, page) => {
     const count = await UserModel.countDocuments({
       username: { $regex: regex },
     });
-    if (page < 1 || isNaN(page) || page * 2 - 1 > count) {
+    if (
+      page < 1 ||
+      isNaN(page) ||
+      page * itemsPerPage - (itemsPerPage - 1) > count
+    ) {
       page = 1;
     }
     const users = await UserModel.find({ username: { $regex: regex } })
-      .limit(2)
-      .skip((page - 1) * 2);
+      .limit(itemsPerPage)
+      .skip((page - 1) * itemsPerPage);
     return { users, count };
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const fetchProducts = async (query, page) => {
+  const regex = new RegExp(query, "i");
+
+  try {
+    await connectToDatabase();
+    const count = await ProductModel.countDocuments({
+      title: { $regex: regex },
+    });
+    if (
+      page < 1 ||
+      isNaN(page) ||
+      page * itemsPerPage - (itemsPerPage - 1) > count
+    ) {
+      page = 1;
+    }
+    const products = await ProductModel.find({ title: { $regex: regex } })
+      .limit(itemsPerPage)
+      .skip((page - 1) * itemsPerPage);
+    return { products, count };
   } catch (error) {
     throw new Error(error);
   }
