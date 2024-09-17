@@ -50,7 +50,7 @@ const ProductsPage = async ({ searchParams }) => {
                 }`}</td>
                 <td>{product.createdAt.toString().slice(4, 16)}</td>
                 <td>{`${product.stock ? product.stock : "-"}`}</td>
-                <td>
+                <td className={styles.buttons}>
                   <Link href={`/dashboard/products/${product.id}`}>
                     <button className={styles.view}>View</button>
                   </Link>
