@@ -14,7 +14,8 @@
     align-items: center;
 }
 
-.table {
+.table,
+.table table {
     width: 100%;
 }
 
@@ -47,6 +48,11 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
 }
 
 .view {

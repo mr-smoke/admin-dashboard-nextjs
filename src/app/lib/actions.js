@@ -49,7 +49,8 @@ export const updateUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
-export const deleteUser = async (id) => {
+export const deleteUser = async (formData) => {
+  const { id } = Object.fromEntries(formData);
   try {
     connectToDatabase();
     await UserModel.findByIdAndDelete(id);
@@ -57,7 +58,6 @@ export const deleteUser = async (id) => {
     throw new Error(error);
   }
   revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
 };
 
 export const addProduct = async (formData) => {
