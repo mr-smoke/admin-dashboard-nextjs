@@ -1,8 +1,12 @@
+import { auth } from "@/app/auth";
 import MenuItem from "./menuItem/menuItem";
 import styles from "./sidebar.module.css";
 import { menuItems } from "@/app/lib/data";
 
-const Sidebar = () => {
+const Sidebar = async () => {
+  const session = await auth();
+
+  console.log(session);
   return (
     <div className={styles.container}>
       <div className={styles.user}>

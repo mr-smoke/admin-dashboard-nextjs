@@ -4,6 +4,7 @@ import { ProductModel, UserModel } from "./models";
 import { connectToDatabase } from "./utils";
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
+import { signIn } from "../auth";
 
 export const addUser = async (formData) => {
   const { username, email, password, isAdmin, isActive, address } =
@@ -130,4 +131,26 @@ export const deleteProduct = async (formData) => {
     throw new Error(error);
   }
   revalidatePath("/dashboard/products");
+};
+
+export const authenticate = async (prevState, formData) => {
+  const { username, password } = Object.fromEntries(formData);
+  try {
+    const result = await signIn("credentials", {
+      username,
+      password,
+      redirect: false,
+    });
+    if (result.error) {
+      return result.error;
+    }
+  } catch (error) {
+    if (err.message.includes("CredentialsSignin")) {
+      return "Wrong Credentials";
+    }
+    throw err;
+  }
+
+  revalidatePath(`/dashboard`);
+  redirect(`/dashboard`);
 };
