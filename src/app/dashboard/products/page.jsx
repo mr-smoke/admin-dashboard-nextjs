@@ -27,29 +27,31 @@ const ProductsPage = async ({ searchParams }) => {
               <th style={{ width: "20%" }}>Title</th>
               <th style={{ width: "25%" }}>Description</th>
               <th style={{ width: "15%" }}>Price</th>
-              <th style={{ width: "15%" }}>Created Date</th>
               <th style={{ width: "10%" }}>Stock</th>
+              <th style={{ width: "15%" }}>Created Date</th>
               <th style={{ width: "10%" }}>Action</th>
             </tr>
           </thead>
           <tbody>
             {products.map((product, index) => (
               <tr key={index}>
-                <td className={styles.product}>
-                  <Image
-                    width={50}
-                    height={50}
-                    src={product.img}
-                    alt={product.title}
-                  />
-                  {product.title}
-                </td>
+                <Link href={`/dashboard/products/${product.id}`}>
+                  <td className={styles.product}>
+                    <Image
+                      width={50}
+                      height={50}
+                      src={product.img}
+                      alt={product.title}
+                    />
+                    {product.title}
+                  </td>
+                </Link>
                 <td>{product.desc}</td>
                 <td>{`${
                   product.price ? "$" + product.price : "No price information"
                 }`}</td>
+                <td>{product.stock}</td>
                 <td>{product.createdAt.toString().slice(4, 16)}</td>
-                <td>{`${product.stock ? product.stock : "-"}`}</td>
                 <td className={styles.buttons}>
                   <Link href={`/dashboard/products/${product.id}`}>
                     <button className={styles.view}>View</button>

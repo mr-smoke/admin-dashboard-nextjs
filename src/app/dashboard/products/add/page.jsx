@@ -11,11 +11,11 @@ const AddProducts = () => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="price">Price</label>
-          <input type="number" id="price" name="price" required />
+          <input type="number" id="price" name="price" min="0" required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="stock">Stock</label>
-          <input type="number" id="stock" name="stock" required />
+          <input type="number" id="stock" name="stock" min="0" required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="size">Size</label>
@@ -40,9 +40,7 @@ const AddProducts = () => {
             required
           ></textarea>
         </div>
-        <button type="submit" className={styles.button}>
-          Add Product
-        </button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );

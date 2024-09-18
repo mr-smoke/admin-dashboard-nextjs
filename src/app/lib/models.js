@@ -53,7 +53,7 @@ const productSchema = new mongoose.Schema(
     },
     img: {
       type: String,
-      default: "/noavatar.png",
+      default: "/noproduct.jpg",
     },
     stock: {
       type: Number,
@@ -67,6 +67,10 @@ const productSchema = new mongoose.Schema(
     },
     size: {
       type: String,
+    },
+    category: {
+      type: String,
+      default: "general",
     },
   },
   { timestamps: true }

@@ -26,28 +26,30 @@ const UsersPage = async ({ searchParams }) => {
             <tr>
               <th style={{ width: "20%" }}>Name</th>
               <th style={{ width: "25%" }}>Email</th>
-              <th style={{ width: "15%" }}>Created Date</th>
               <th style={{ width: "15%" }}>Role</th>
               <th style={{ width: "10%" }}>Status</th>
+              <th style={{ width: "15%" }}>Created Date</th>
               <th style={{ width: "10%" }}>Action</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
-                <td className={styles.user}>
-                  <Image
-                    width={40}
-                    height={40}
-                    src={user.img}
-                    alt={user.username}
-                  />
-                  {user.username}
-                </td>
+                <Link href={`/dashboard/users/${user.id}`}>
+                  <td className={styles.user}>
+                    <Image
+                      width={40}
+                      height={40}
+                      src={user.img}
+                      alt={user.username}
+                    />
+                    {user.username}
+                  </td>
+                </Link>
                 <td>{user.email}</td>
-                <td>{user.createdAt?.toString().slice(4, 16)}</td>
                 <td>{user.isAdmin ? "admin" : "user"}</td>
                 <td>{user.isActive ? "active" : "passive"}</td>
+                <td>{user.createdAt?.toString().slice(4, 16)}</td>
                 <td className={styles.buttons}>
                   <Link href={`/dashboard/users/${user.id}`}>
                     <button className={styles.view}>View</button>

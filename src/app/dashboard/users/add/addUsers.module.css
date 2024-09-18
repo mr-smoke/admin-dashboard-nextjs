@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    background-color: #333;
+    background-color: var(--backgroundSoft);
     border-radius: 5px;
     padding: 1.5rem;
     margin-top: 1rem;
@@ -22,23 +22,21 @@
     font-size: 1rem;
     border-radius: 5px;
     outline: none;
+    background-color: var(--backgroundSoft);
+    color: var(--textSoft);
+    border-color: var(--textSoft)
+}
+
+.form label {
+    font-weight: 500;
+    color: white;
 }
 
 .form button {
     padding: 1rem;
     font-size: 1rem;
-    border-radius: 5px;
-    outline: none;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
     width: 25%;
     align-self: center;
-}
-
-.form button:hover {
-    background-color: #45a049;
 }
 
 .formGroup {

@@ -8,14 +8,13 @@ import {
   MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
-  MdLogout,
   MdOutlinePlayCircle,
   MdAddBox,
 } from "react-icons/md";
 import { ProductModel, UserModel } from "./models";
 import { connectToDatabase } from "./utils";
 
-const itemsPerPage = process.env.NEXT_PUBLIC_ITEMS_PER_PAGE;
+export const itemsPerPage = 5;
 
 export const menuItems = [
   {
@@ -195,7 +194,7 @@ export const items = [
   },
 ];
 
-export const products = [
+export const dummyProductsData = [
   {
     id: 1,
     title: "Product 1",
@@ -243,7 +242,7 @@ export const products = [
   },
 ];
 
-export const usersData = [
+export const dummyUsersData = [
   {
     id: 1,
     name: "Test User 1",

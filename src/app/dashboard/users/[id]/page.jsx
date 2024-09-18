@@ -34,7 +34,12 @@ const UserDetailPage = async ({ params }) => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter new password"
+          />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="phone">Phone</label>
@@ -42,23 +47,29 @@ const UserDetailPage = async ({ params }) => {
             type="phone"
             id="phone"
             name="phone"
-            placeholder={user.phone}
+            placeholder={user.phone ? user.phone : "Enter phone number"}
           />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="isAdmin">User Type</label>
-          <select id="isAdmin" name="isAdmin">
-            <option value={false}>Select user type</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
+          <select id="isAdmin" name="isAdmin" defaultValue={user.isAdmin}>
+            <option value={true} selected={user.isAdmin}>
+              Admin
+            </option>
+            <option value={false} selected={!user.isAdmin}>
+              User
+            </option>
           </select>
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="isActive">Status</label>
-          <select id="isActive" name="isActive">
-            <option value={true}>Select a status</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
+          <select id="isActive" name="isActive" defaultValue={user.isActive}>
+            <option value={true} selected={user.isActive}>
+              Active
+            </option>
+            <option value={false} selected={!user.isActive}>
+              Passive
+            </option>
           </select>
         </div>
         <div className={styles.formGroup}>
@@ -67,7 +78,7 @@ const UserDetailPage = async ({ params }) => {
             id="address"
             name="address"
             rows="4"
-            placeholder={user.address}
+            placeholder={user.address ? user.address : "Enter address"}
           ></textarea>
         </div>
         <button type="submit" className={styles.button}>

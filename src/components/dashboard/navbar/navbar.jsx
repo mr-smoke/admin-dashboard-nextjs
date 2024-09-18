@@ -1,5 +1,5 @@
 "use client";
-import { MdMessage, MdNotifications } from "react-icons/md";
+import { MdMessage, MdNotifications, MdOutlineSearch } from "react-icons/md";
 import { IoMdGlobe } from "react-icons/io";
 import styles from "./navbar.module.css";
 import SearchBar from "../searchBar/searchBar";
@@ -11,7 +11,10 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <p>{path.split("/").pop()}</p>
       <div className={styles.menu}>
-        <SearchBar placeholder="Search..." />
+        <div className={styles.search}>
+          <MdOutlineSearch size={36} className={styles.searchIcon} />
+          <input type="text" placeholder="Search" />
+        </div>
         <a href="#">
           <MdMessage size={20} />
         </a>

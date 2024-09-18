@@ -9,7 +9,7 @@ const ProductDetailPage = async ({ params }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.userInfo}>
+      <div className={styles.productInfo}>
         <Image width={300} height={300} src={product.img} alt="user" />
         <p>{product.title}</p>
       </div>
@@ -30,6 +30,7 @@ const ProductDetailPage = async ({ params }) => {
             type="number"
             id="price"
             name="price"
+            min="0"
             placeholder={product.price}
           />
         </div>
@@ -39,20 +40,46 @@ const ProductDetailPage = async ({ params }) => {
             type="number"
             id="stock"
             name="stock"
+            min="0"
             placeholder={product.stock}
           />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="size">Size</label>
-          <input type="text" id="size" name="size" placeholder={product.size} />
+          <input
+            type="text"
+            id="size"
+            name="size"
+            placeholder={product.size ? product.size : "Enter size"}
+          />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="category">Category</label>
-          <select id="category" name="category">
-            <option value="general">Select a category</option>
-            <option value="electronics">Electronics</option>
-            <option value="jewelery">Jewelery</option>
-            <option value="phones">Phones</option>
+          <select id="category" name="category" defaultValue={product.category}>
+            <option
+              value="general"
+              selected={product.category === "general" ? "selected" : ""}
+            >
+              General
+            </option>
+            <option
+              value="electronics"
+              selected={product.category === "electronics" ? "selected" : ""}
+            >
+              Electronics
+            </option>
+            <option
+              value="jewelery"
+              selected={product.category === "jewelery" ? "selected" : ""}
+            >
+              Jewelery
+            </option>
+            <option
+              value="phones"
+              selected={product.category === "phones" ? "selected" : ""}
+            >
+              Phones
+            </option>
           </select>
         </div>
         <div className={styles.formGroup}>

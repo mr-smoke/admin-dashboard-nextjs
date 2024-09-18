@@ -8,7 +8,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: var(--backgroundSoft);
     border-radius: 5px;
     padding: 1.5rem;
     width: 25%;
@@ -33,22 +33,14 @@
     font-size: 1rem;
     border-radius: 5px;
     outline: none;
+    border-color: var(--background);
 }
 
 .form button {
     padding: 1rem;
     font-size: 1rem;
-    border-radius: 5px;
-    outline: none;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+    width: 25%;
     align-self: center;
-}
-
-.form button:hover {
-    background-color: #45a049;
 }
 
 .formGroup {

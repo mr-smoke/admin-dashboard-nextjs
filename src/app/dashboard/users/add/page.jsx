@@ -20,17 +20,15 @@ const AddUsers = () => {
         <div className={styles.formGroup}>
           <label htmlFor="isAdmin">User Type</label>
           <select id="isAdmin" name="isAdmin">
-            <option value={false}>Select user type</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
+            <option value={false}>User</option>
+            <option value={true}>Admin</option>
           </select>
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="isActive">Status</label>
           <select id="isActive" name="isActive">
-            <option value={true}>Select a status</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
+            <option value={true}>Active</option>
+            <option value={false}>Passive</option>
           </select>
         </div>
         <div className={styles.formGroup}>
@@ -42,9 +40,7 @@ const AddUsers = () => {
             placeholder="Enter a address"
           ></textarea>
         </div>
-        <button type="submit" className={styles.button}>
-          Add User
-        </button>
+        <button type="submit">Add User</button>
       </form>
     </div>
   );
