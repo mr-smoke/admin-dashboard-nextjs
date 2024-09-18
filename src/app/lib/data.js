@@ -68,7 +68,6 @@ export const menuItems = [
         icon: <MdOutlineSettings />,
       },
       { title: "Help", url: "/dashboard/help", icon: <MdHelpCenter /> },
-      { title: "Logout", url: "/logut", icon: <MdLogout /> },
     ],
   },
 ];

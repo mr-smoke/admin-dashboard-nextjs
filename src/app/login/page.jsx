@@ -21,7 +21,12 @@ const LoginPage = () => {
           <button type="submit" className={styles.button}>
             Login
           </button>
-          {state && state}
+
+          {state && (
+            <span style={{ textAlign: "center", color: "red" }}>
+              Wrong username or password. Please try again.
+            </span>
+          )}
         </form>
       </div>
     </div>

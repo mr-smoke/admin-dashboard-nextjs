@@ -145,10 +145,10 @@ export const authenticate = async (prevState, formData) => {
       return result.error;
     }
   } catch (error) {
-    if (err.message.includes("CredentialsSignin")) {
+    if (error.message.includes("CredentialsSignin")) {
       return "Wrong Credentials";
     }
-    throw err;
+    throw error;
   }
 
   revalidatePath(`/dashboard`);
