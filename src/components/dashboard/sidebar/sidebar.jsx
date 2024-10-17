@@ -3,6 +3,7 @@ import MenuItem from "./menuItem/menuItem";
 import styles from "./sidebar.module.css";
 import { menuItems } from "@/app/lib/data";
 import { MdLogout } from "react-icons/md";
+import Image from "next/image";
 
 const Sidebar = async () => {
   const { user } = await auth();
@@ -10,7 +11,13 @@ const Sidebar = async () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <img src={user.img} alt="logo" />
+        <Image
+          src={user.img}
+          alt="logo"
+          width={50}
+          height={50}
+          priority={true}
+        />
         <div className={styles.userInfo}>
           <h2>{user.username}</h2>
           <p>Administrator</p>

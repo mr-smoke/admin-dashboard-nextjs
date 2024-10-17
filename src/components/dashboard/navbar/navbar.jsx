@@ -2,8 +2,8 @@
 import { MdMessage, MdNotifications, MdOutlineSearch } from "react-icons/md";
 import { IoMdGlobe } from "react-icons/io";
 import styles from "./navbar.module.css";
-import SearchBar from "../searchBar/searchBar";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const path = usePathname();
@@ -15,15 +15,15 @@ const Navbar = () => {
           <MdOutlineSearch size={36} className={styles.searchIcon} />
           <input type="text" placeholder="Search" />
         </div>
-        <a href="#">
+        <Link href="#">
           <MdMessage size={20} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <MdNotifications size={20} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <IoMdGlobe size={20} />
-        </a>
+        </Link>
       </div>
     </nav>
   );

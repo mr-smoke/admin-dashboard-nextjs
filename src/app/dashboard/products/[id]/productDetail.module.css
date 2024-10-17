@@ -17,6 +17,9 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 316px;
 }
 
 .productInfo img {

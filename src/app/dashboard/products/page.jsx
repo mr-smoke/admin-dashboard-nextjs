@@ -35,8 +35,8 @@ const ProductsPage = async ({ searchParams }) => {
           <tbody>
             {products.map((product, index) => (
               <tr key={index}>
-                <Link href={`/dashboard/products/${product.id}`}>
-                  <td className={styles.product}>
+                <td className={styles.product}>
+                  <Link href={`/dashboard/products/${product.id}`}>
                     <Image
                       width={50}
                       height={50}
@@ -44,8 +44,8 @@ const ProductsPage = async ({ searchParams }) => {
                       alt={product.title}
                     />
                     {product.title}
-                  </td>
-                </Link>
+                  </Link>
+                </td>
                 <td>{product.desc}</td>
                 <td>{`${
                   product.price ? "$" + product.price : "No price information"

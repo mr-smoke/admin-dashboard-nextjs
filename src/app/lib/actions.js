@@ -12,6 +12,10 @@ export const addUser = async (formData) => {
 
   try {
     connectToDatabase();
+    if (await UserModel.exists({ $or: [{ email }, { username }] })) {
+      return { error: "User already exists" };
+    }
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     const newUser = new UserModel({
@@ -23,11 +27,10 @@ export const addUser = async (formData) => {
       address,
     });
     await newUser.save();
+    return {};
   } catch (error) {
-    throw new Error(error);
+    return { error: "Something went wrong" };
   }
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
 };
 
 export const updateUser = async (formData) => {
@@ -36,6 +39,11 @@ export const updateUser = async (formData) => {
 
   try {
     connectToDatabase();
+
+    if (await UserModel.exists({ $or: [{ email }, { username }] })) {
+      return { error: "This email or username is already in use" };
+    }
+
     const updateFields = {
       username,
       email,
@@ -77,6 +85,11 @@ export const addProduct = async (formData) => {
 
   try {
     connectToDatabase();
+
+    if (await ProductModel.exists({ title })) {
+      return { error: "Product already exists" };
+    }
+
     const newProduct = new ProductModel({
       title,
       price,
@@ -99,6 +112,11 @@ export const updateProduct = async (formData) => {
 
   try {
     connectToDatabase();
+
+    if (await ProductModel.exists({ title })) {
+      return { error: "Product already exists" };
+    }
+
     const updateFields = {
       title,
       price,
@@ -136,17 +154,25 @@ export const deleteProduct = async (formData) => {
 export const authenticate = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
   try {
+    connectToDatabase();
+    const user = await UserModel.findOne({ username });
+
+    if (!user || !user.isAdmin) {
+      return "You are not authorized to access this page.";
+    }
+
     const result = await signIn("credentials", {
       username,
       password,
       redirect: false,
     });
+
     if (result.error) {
       return result.error;
     }
   } catch (error) {
     if (error.message.includes("CredentialsSignin")) {
-      return "Wrong Credentials";
+      return "Wrong username or password. Please try again.";
     }
     throw error;
   }

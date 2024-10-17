@@ -33,7 +33,7 @@ export const menuItems = [
       },
       {
         title: "Transactions",
-        url: "/dashboard/transactions",
+        url: "/dashboard/",
         icon: <MdAttachMoney />,
       },
     ],
@@ -43,17 +43,17 @@ export const menuItems = [
     list: [
       {
         title: "Revenue",
-        url: "/dashboard/revenue",
+        url: "/dashboard/",
         icon: <MdWork />,
       },
       {
         title: "Reports",
-        url: "/dashboard/reports",
+        url: "/dashboard/",
         icon: <MdAnalytics />,
       },
       {
         title: "Teams",
-        url: "/dashboard/teams",
+        url: "/dashboard/",
         icon: <MdPeople />,
       },
     ],
@@ -63,10 +63,10 @@ export const menuItems = [
     list: [
       {
         title: "Settings",
-        url: "/dashboard/settings",
+        url: "/dashboard/",
         icon: <MdOutlineSettings />,
       },
-      { title: "Help", url: "/dashboard/help", icon: <MdHelpCenter /> },
+      { title: "Help", url: "/dashboard/", icon: <MdHelpCenter /> },
     ],
   },
 ];

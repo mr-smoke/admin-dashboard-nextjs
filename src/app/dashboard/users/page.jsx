@@ -35,8 +35,8 @@ const UsersPage = async ({ searchParams }) => {
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
-                <Link href={`/dashboard/users/${user.id}`}>
-                  <td className={styles.user}>
+                <td className={styles.user}>
+                  <Link href={`/dashboard/users/${user.id}`}>
                     <Image
                       width={40}
                       height={40}
@@ -44,8 +44,8 @@ const UsersPage = async ({ searchParams }) => {
                       alt={user.username}
                     />
                     {user.username}
-                  </td>
-                </Link>
+                  </Link>
+                </td>
                 <td>{user.email}</td>
                 <td>{user.isAdmin ? "admin" : "user"}</td>
                 <td>{user.isActive ? "active" : "passive"}</td>

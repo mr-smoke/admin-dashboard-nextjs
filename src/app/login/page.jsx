@@ -12,7 +12,13 @@ const LoginPage = () => {
         <form className={styles.form} action={formAction}>
           <div className={styles.formGroup}>
             <label htmlFor="username">Username</label>
-            <input type="username" id="username" name="username" required />
+            <input
+              type="username"
+              id="username"
+              name="username"
+              maxLength={20}
+              required
+            />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="password">Password</label>
@@ -21,11 +27,12 @@ const LoginPage = () => {
           <button type="submit" className={styles.button}>
             Login
           </button>
-
+          <span style={{ textAlign: "center", color: "gray" }}>
+            You can login with username: admin, password: admin for testing
+            purposes.
+          </span>
           {state && (
-            <span style={{ textAlign: "center", color: "red" }}>
-              Wrong username or password. Please try again.
-            </span>
+            <span style={{ textAlign: "center", color: "red" }}>{state}</span>
           )}
         </form>
       </div>

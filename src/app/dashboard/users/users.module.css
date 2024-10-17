@@ -32,11 +32,10 @@
     white-space: nowrap;
 }
 
-.user {
+.user a {
     display: flex;
     gap: 1rem;
     align-items: center;
-
 }
 
 .user:hover {

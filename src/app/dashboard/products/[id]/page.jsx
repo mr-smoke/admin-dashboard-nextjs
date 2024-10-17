@@ -21,6 +21,7 @@ const ProductDetailPage = async ({ params }) => {
             type="text"
             id="title"
             name="title"
+            maxLength={50}
             placeholder={product.title}
           />
         </div>
@@ -31,6 +32,7 @@ const ProductDetailPage = async ({ params }) => {
             id="price"
             name="price"
             min="0"
+            max="100000"
             placeholder={product.price}
           />
         </div>
@@ -41,6 +43,7 @@ const ProductDetailPage = async ({ params }) => {
             id="stock"
             name="stock"
             min="0"
+            max="100000"
             placeholder={product.stock}
           />
         </div>
@@ -50,6 +53,7 @@ const ProductDetailPage = async ({ params }) => {
             type="text"
             id="size"
             name="size"
+            maxLength={25}
             placeholder={product.size ? product.size : "Enter size"}
           />
         </div>
@@ -88,6 +92,7 @@ const ProductDetailPage = async ({ params }) => {
             id="desc"
             name="desc"
             rows="4"
+            maxLength={200}
             placeholder={product.desc}
           ></textarea>
         </div>

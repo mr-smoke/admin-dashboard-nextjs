@@ -20,6 +20,7 @@ const UserDetailPage = async ({ params }) => {
             type="text"
             id="username"
             name="username"
+            maxLength={20}
             placeholder={user.username}
           />
         </div>
@@ -29,6 +30,7 @@ const UserDetailPage = async ({ params }) => {
             type="email"
             id="email"
             name="email"
+            maxLength={50}
             placeholder={user.email}
           />
         </div>
@@ -38,6 +40,7 @@ const UserDetailPage = async ({ params }) => {
             type="password"
             id="password"
             name="password"
+            minLength={6}
             placeholder="Enter new password"
           />
         </div>
@@ -47,6 +50,7 @@ const UserDetailPage = async ({ params }) => {
             type="phone"
             id="phone"
             name="phone"
+            maxLength={15}
             placeholder={user.phone ? user.phone : "Enter phone number"}
           />
         </div>
@@ -78,6 +82,7 @@ const UserDetailPage = async ({ params }) => {
             id="address"
             name="address"
             rows="4"
+            maxLength={100}
             placeholder={user.address ? user.address : "Enter address"}
           ></textarea>
         </div>

@@ -2,6 +2,7 @@ import styles from "./layout.module.css";
 import Footer from "@/components/dashboard/footer/footer";
 import Navbar from "@/components/dashboard/navbar/navbar";
 import Sidebar from "@/components/dashboard/sidebar/sidebar";
+import { Toaster } from "react-hot-toast";
 
 const Layout = ({ children }) => {
   return (
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
           <Footer />
         </footer>
       </main>
+      <Toaster />
     </div>
   );
 };
