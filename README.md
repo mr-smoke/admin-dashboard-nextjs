@@ -4,17 +4,17 @@
 
 ## Table of Contents
 
-- [About The Project](#about)
+- [About The Project](#about-the-project)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
-- [Technologies Used](#technologies)
+- [Technologies Used](#technologies-used)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
-##About The Project
+## About The Project
 
 An advanced full-stack admin dashboard built with Next.js, MongoDB, and NextAuth. This project provides a comprehensive and user-friendly interface for managing products, users, and other administrative tasks. It leverages the power of Next.js for server-side rendering and static site generation, MongoDB for a flexible and scalable database solution, and NextAuth for secure authentication and session management.
 
