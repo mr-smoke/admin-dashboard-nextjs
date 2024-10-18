@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Admin Dashboard - Fullstack
 
-## Getting Started
+![Banner](https://i.ibb.co/k2x7sYy/banner.png)
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [About The Project](#about)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##About The Project
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+An advanced full-stack admin dashboard built with Next.js, MongoDB, and NextAuth. This project provides a comprehensive and user-friendly interface for managing products, users, and other administrative tasks. It leverages the power of Next.js for server-side rendering and static site generation, MongoDB for a flexible and scalable database solution, and NextAuth for secure authentication and session management.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Gif](https://i.ibb.co/QJkmgYk/New-Project-Clipchampileyapld-ezgif-com-video-to-gif-converter.gif)
 
-## Learn More
+### Key Use Cases:
 
-To learn more about Next.js, take a look at the following resources:
+- Manage products and users with ease using intuitive forms and dynamic updates.
+- Efficiently handle large data sets with pagination and search functionality.
+- Visualize data through interactive charts.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To set up the project locally, follow these steps:
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone https://github.com/mr-smoke/admin-dashboard-nextjs.git
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Navigate to the project directory:
+
+   ```bash
+   cd admin-dashboard-nextjs
+   ```
+
+3. Install the [dependencies](#dependencies):
+
+   ```bash
+   npm install
+   ```
+
+4. Set up environment variables:
+
+   - Create a `.env` file in the root directory and add the necessary environment variables.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+To use the admin dashboard, follow these steps:
+
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Log in using the provided credentials (e.g., username: `admin`, password: `admin`).
+3. Use the navigation menu to access different sections of the dashboard, such as Products, Users, and Settings.
+
+### Example Commands
+
+- To add a new product:
+
+  1. Navigate to the Products section.
+  2. Click on the "Add Product" button.
+  3. Fill in the product details and submit the form.
+
+- To manage users:
+  1. Navigate to the Users section.
+  2. View, edit, or delete users as needed.
+
+## Features
+
+- **Authentication**: Secure login and session management using NextAuth. Includes login and logout functionality.
+- **User Management**: Add, edit, and delete users. Includes pagination and search functionality.
+- **Product Management**: Add, edit, and delete products. Includes pagination and search functionality.
+- **Charts**: Visualize data with charts made using Recharts.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Real-time Updates**: Dynamic updates without page reloads.
+- **Server-side Rendering**: Improved performance and SEO with Next.js.
+- **Database Integration**: MongoDB for flexible and scalable data storage.
+
+## Technologies Used
+
+- [![Next][Next.js]][Next-url]
+- [![NextAuth][NextAuth.js]][NextAuth-url]
+- [![MongoDB][MongoDB]][Mongo-url]
+
+## Dependencies
+
+- **bcrypt**: For hashing passwords and ensuring secure authentication.
+- **mongodb**: NoSQL database for storing users and products data.
+- **mongoose**: MongoDB object modeling tool designed to work in an asynchronous environment.
+- **next**: The React framework used for server-side rendering and static site generation.
+- **next-auth**: Library to implement authentication with various providers.
+- **react**: Core library for building the frontend interface.
+- **react-dom**: React library for DOM rendering.
+- **react-hot-toast**: To display non-intrusive toast notifications.
+- **react-icons**: Collection of popular icons to enhance the UI.
+- **recharts**: Simple and flexible charts for data visualization.
+- **use-debounce**: Hook for adding debounce functionality in various parts of the UI.
+
+## Contributing
+
+Contributions are welcome! To contribute to this project, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- Email: [muhammetbakiduman@gmail.com](mailto:muhammetbakiduman@gmail.com)
+- LinkedIn: [Baki Duman](https://www.linkedin.com/in/muhammet-baki-duman-019451195/)
+
+---
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[MongoDB]: https://img.shields.io/badge/mongodb-000000?style=for-the-badge&logo=mongodb&logoColor=white
+[Mongo-url]: https://www.mongodb.com
+[NextAuth.js]: https://img.shields.io/badge/nextauth-20232A?style=for-the-badge&logo=nextauth&logoColor=61DAFB
+[NextAuth-url]: https://next-auth.js.org
